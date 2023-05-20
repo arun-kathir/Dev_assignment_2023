@@ -1,0 +1,80 @@
+/*
+*********************************************************
+Apex Class Name    	: ITriggerHandler
+@Author 			: Arunkumar Kathiravan
+@CreatedDate 		: May 10, 2023
+@Description 		: Trigger Handler Interface class
+*********************************************************
+*/
+public interface ITriggerHandler{
+     
+    /*
+	*********************************************************
+	@Author 		: Arunkumar Kathiravan
+	@CreatedDate 	: May 10, 2023
+	@Description 	: Called by the trigger framework before insert of the records
+	@Parameters 	: List<sObject> newList
+	*********************************************************
+	*/
+    void beforeInsert(List<sObject> newList);
+     
+    /*
+	*********************************************************
+	@Author 		: Arunkumar Kathiravan
+	@CreatedDate 	: May 10, 2023
+	@Description 	: Called by the trigger framework after insert of the records
+	@Parameters 	: List<sObject> newList, Map<Id, sObject> newMap
+	*********************************************************
+	*/
+    void afterInsert(List<sObject> newList, Map<Id, sObject> newMap);
+     
+    /*
+	*********************************************************
+	@Author 		: Arunkumar Kathiravan
+	@CreatedDate 	: May 10, 2023
+	@Description 	: Called by the trigger framework before update of the records
+	@Parameters 	: List<sObject> newList, Map<Id, sObject> newMap, List<sObject> oldList, Map<Id, sObject> oldMap
+	*********************************************************
+	*/
+    void beforeUpdate(List<sObject> newList, Map<Id, sObject> newMap, List<sObject> oldList, Map<Id, sObject> oldMap);
+     
+    /*
+	*********************************************************
+	@Author 		: Arunkumar Kathiravan
+	@CreatedDate 	: May 10, 2023
+	@Description 	: Called by the trigger framework after update of the records
+	@Parameters 	: List<sObject> newList, Map<Id, sObject> newMap, List<sObject> oldList, Map<Id, sObject> oldMap
+	*********************************************************
+	*/
+    void afterUpdate(List<sObject> newList, Map<Id, sObject> newMap, List<sObject> oldList, Map<Id, sObject> oldMap);
+     
+    /*
+	*********************************************************
+	@Author 		: Arunkumar Kathiravan
+	@CreatedDate 	: May 10, 2023
+	@Description 	: Called by the trigger framework before delete of the records
+	@Parameters 	: List<sObject> oldList, Map<Id, sObject> oldMap
+	*********************************************************
+	*/           
+    void beforeDelete(List<sObject> oldList, Map<Id, sObject> oldMap);
+     
+    /*
+	*********************************************************
+	@Author 		: Arunkumar Kathiravan
+	@CreatedDate 	: May 10, 2023
+	@Description 	: Called by the trigger framework after delete of the records
+	@Parameters 	: List<sObject> oldList, Map<Id, sObject> oldMap
+	*********************************************************
+	*/
+    void afterDelete(List<sObject> oldList, Map<Id, sObject> oldMap);
+     
+    /*
+	*********************************************************
+	@Author 		: Arunkumar Kathiravan
+	@CreatedDate 	: May 10, 2023
+	@Description 	: Called by the trigger framework after undelete of the records
+	@Parameters 	: List<sObject> newList, Map<Id, sObject> newMap
+	*********************************************************
+	*/
+    void afterUnDelete(List<sObject> newList, Map<Id, sObject> newMap);
+}

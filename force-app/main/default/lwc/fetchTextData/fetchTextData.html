@@ -1,0 +1,8 @@
+<template>
+    <template if:true={resultText}>
+        <!-- <template for:each={resultText} for:item="text"> -->
+            <lightning-textarea name="textArea" label="Cat Fact" value={resultText.fact}></lightning-textarea>       
+        <!-- </template> -->
+    </template>
+    <lightning-button label="Fetch" onclick={getCatFactText}></lightning-button>
+</template>
